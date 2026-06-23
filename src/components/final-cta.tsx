@@ -38,29 +38,28 @@ export function FinalCTA() {
         {/* Label */}
         <div className="reveal flex items-center justify-center gap-3 mb-8">
           <span className="accent-line" />
-          <span className="section-label">{"// LET'S BUILD"}</span>
+          <span className="section-label">{"// START HERE"}</span>
           <span className="accent-line" />
         </div>
 
         {/* Headline */}
         <h2
-          className="reveal text-[clamp(3rem,8vw,5rem)] font-bold text-[#f5f5f5] mb-6 leading-tight"
+          className="reveal text-[clamp(2.5rem,7vw,4.5rem)] font-bold text-[#f5f5f5] mb-6 leading-tight"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
-          Ready to Ship?
+          Ready to Know Where You Stand?
         </h2>
 
         {/* Body */}
         <p className="reveal text-lg text-[#737373] mb-10 max-w-xl mx-auto leading-relaxed">
-          If you&apos;re a funded startup with a product to ship, let&apos;s talk.
-          Discovery calls are focused, free, and built around your roadmap — not a pitch.
+          The AI Build Readiness Audit™ is the entry point. It gives you visibility into what&apos;s working, what&apos;s at risk, and what to prioritize next — in weeks, not months.
         </p>
 
         {/* CTA */}
         <div className="reveal mb-6">
           <Link href="/contact">
             <button className="btn-accent text-base px-10 py-5">
-              Book a Discovery Call
+              Book an AI Build Readiness Audit™
               <ArrowRight className="w-5 h-5" />
             </button>
           </Link>
@@ -71,14 +70,14 @@ export function FinalCTA() {
           className="reveal text-sm text-[#525252] mb-8"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
-          No commitment. No decks. Just a conversation about what you&apos;re building.
+          No commitment. No decks. A focused conversation about your engineering health.
         </p>
 
         {/* Email alternative */}
         <p className="reveal text-sm text-[#737373]">
           Or reach us directly:{" "}
           <a
-            href="mailto:hello@datastunt.com"
+            href="mailto:nihit@datastunt.com"
             className="text-[#0284c7] hover:underline"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >

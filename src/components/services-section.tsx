@@ -1,39 +1,33 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Search, Shield, Cog } from "lucide-react"
 import Link from "next/link"
 
-const deliverables = [
+const offerings = [
   {
-    num: "01",
-    title: "AI Architecture Planning",
-    description: "We map the right system before writing a line of code.",
+    icon: Search,
+    name: "AI Build Readiness Audit™",
+    role: "The Assessment Layer",
+    description:
+      "Understand the health of your engineering organization. Identify risks hiding beneath the surface. Create visibility where none existed — turning technical uncertainty into executive intelligence.",
+    href: "/what-we-do#audit",
   },
   {
-    num: "02",
-    title: "LLM Integrations",
-    description: "Connect and orchestrate language models into your product.",
+    icon: Shield,
+    name: "AI Engineering Copilot™",
+    role: "The Governance Layer",
+    description:
+      "Ongoing oversight that catches risk early, supports technical leadership, and prevents the compounding failures that kill velocity. Governance as a continuous function, not a quarterly meeting.",
+    href: "/what-we-do#copilot",
   },
   {
-    num: "03",
-    title: "AI Workflows & Agents",
-    description: "Automate complex processes with AI-powered agent systems.",
-  },
-  {
-    num: "04",
-    title: "MVP Development",
-    description: "End-to-end build from zero to functional product.",
-  },
-  {
-    num: "05",
-    title: "Internal Tools",
-    description: "Operational AI tooling that saves your team hours per week.",
-  },
-  {
-    num: "06",
-    title: "Deployment & Iteration",
-    description: "We ship, then stay to scale.",
+    icon: Cog,
+    name: "AI Development Operating System™",
+    role: "The Transformation Layer",
+    description:
+      "Redesign how your engineering organization works with AI. Move beyond tool access to genuine organizational transformation — building repeatable systems that enable sustainable scale.",
+    href: "/what-we-do#operating-system",
   },
 ]
 
@@ -46,7 +40,7 @@ export function ServicesSection() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.querySelectorAll(".reveal").forEach((el, i) => {
-              setTimeout(() => el.classList.add("visible"), i * 60)
+              setTimeout(() => el.classList.add("visible"), i * 100)
             })
           }
         })
@@ -63,7 +57,7 @@ export function ServicesSection() {
         {/* Label */}
         <div className="reveal flex items-center gap-3 mb-8">
           <span className="accent-line" />
-          <span className="section-label">{"// WHAT WE BUILD"}</span>
+          <span className="section-label">{"// THREE ENGAGEMENT TYPES"}</span>
         </div>
 
         {/* Headline */}
@@ -71,62 +65,56 @@ export function ServicesSection() {
           className="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#f5f5f5] mb-3 leading-tight"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
-          The AI Build Sprint
+          Assess. Govern. Transform.
         </h2>
-        <p className="reveal text-lg text-[#737373] mb-16">
-          Design and ship AI products and features in 14–21 days.
+        <p className="reveal text-lg text-[#737373] mb-16 max-w-2xl">
+          Three ways to work with Datastunt — each building on the last, all powered by the DAIRS™ framework.
         </p>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.08)] rounded-[4px] overflow-hidden mb-12">
-          {deliverables.map(({ num, title, description }) => (
+        {/* Cards */}
+        <div className="grid md:grid-cols-3 gap-4 mb-12">
+          {offerings.map(({ icon: Icon, name, role, description, href }) => (
             <div
-              key={num}
-              className="reveal card-lift bg-[#0a0a0a] p-8 group relative"
+              key={name}
+              className="reveal card-lift bg-[#111111] border border-[rgba(255,255,255,0.08)] rounded-[4px] p-8 group flex flex-col"
             >
-              {/* Number — large faded behind */}
+              {/* Icon */}
+              <div className="w-12 h-12 rounded-[4px] bg-[#1a1a1a] border border-[rgba(255,255,255,0.08)] flex items-center justify-center mb-6 group-hover:border-[#0284c7] transition-colors duration-200">
+                <Icon className="w-6 h-6 text-[#737373] group-hover:text-[#0284c7] transition-colors duration-200" />
+              </div>
+
+              {/* Role tag */}
               <span
-                className="absolute top-4 right-6 text-6xl font-bold text-[#f5f5f5] select-none pointer-events-none transition-opacity duration-200 group-hover:opacity-5"
-                style={{
-                  fontFamily: "var(--font-montserrat), sans-serif",
-                  opacity: 0.06,
-                }}
+                className="text-xs text-[#0284c7] font-bold uppercase tracking-wider mb-3"
+                style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
               >
-                {num}
+                {role}
               </span>
 
-              <div className="relative z-10">
-                <span
-                  className="block text-xs text-[#0284c7] mb-3"
-                  style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
-                >
-                  {num}
-                </span>
-                <h3
-                  className="text-base font-bold text-[#f5f5f5] mb-2"
-                  style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
-                >
-                  {title}
-                </h3>
-                <p className="text-sm text-[#737373] leading-relaxed">
-                  {description}
-                </p>
-              </div>
+              {/* Name */}
+              <h3
+                className="text-lg font-bold text-[#f5f5f5] mb-3"
+                style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+              >
+                {name}
+              </h3>
+
+              {/* Description */}
+              <p className="text-sm text-[#737373] leading-relaxed flex-1 mb-6">
+                {description}
+              </p>
+
+              {/* Link */}
+              <Link
+                href={href}
+                className="inline-flex items-center gap-2 text-sm text-[#0284c7] hover:text-sky-400 transition-colors font-medium"
+                style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
+              >
+                Learn more
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
           ))}
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-[rgba(255,255,255,0.08)] mb-12" />
-
-        {/* CTA */}
-        <div className="reveal text-center">
-          <Link href="/contact">
-            <button className="btn-accent text-base px-8 py-4">
-              Start Your Build Sprint
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </Link>
         </div>
       </div>
     </section>

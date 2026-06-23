@@ -16,7 +16,7 @@ export function Footer() {
               className="h-8 w-auto"
             />
             <p className="text-[#737373] text-sm leading-relaxed max-w-xs">
-              We help startups ship AI products faster.
+              AI-Native Engineering Governance. Helping organizations build, operate, and scale software safely in the age of AI.
             </p>
           </div>
 
@@ -30,10 +30,10 @@ export function Footer() {
             </p>
             <ul className="space-y-3">
               {[
-                { label: "How It Works", href: "/#how-it-works" },
-                { label: "Who We Work With", href: "/#who-we-work-with" },
-                { label: "Services", href: "/#services" },
-                { label: "Book a Call", href: "/contact" },
+                { label: "What We Do", href: "/what-we-do" },
+                { label: "DAIRS™ Framework", href: "/what-we-do#dairs" },
+                { label: "About", href: "/about" },
+                { label: "Book an Audit", href: "/contact" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link

@@ -20,10 +20,10 @@ import {
 import { Menu, ChevronDown } from "lucide-react"
 
 const solutions = [
-  { label: "Agentic Knowledge Assistant", href: "/rag" },
-  { label: "Intelligent Document Processing", href: "/document-suite" },
-  { label: "AI Growth Engine", href: "/marketing-assist" },
-  { label: "Visual AI Automation", href: "/computer-vision" },
+  { label: "AI Build Readiness Audit™", href: "/what-we-do#audit" },
+  { label: "AI Engineering Copilot™", href: "/what-we-do#copilot" },
+  { label: "AI Development Operating System™", href: "/what-we-do#operating-system" },
+  { label: "DAIRS™ Framework", href: "/what-we-do#dairs" },
 ]
 
 export function Header() {
@@ -63,7 +63,7 @@ export function Header() {
                       className="text-sm font-semibold text-[#f5f5f5] hover:text-sky-400 hover:no-underline py-3"
                       style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                     >
-                      AI Labs
+                      What We Do
                     </AccordionTrigger>
                     <AccordionContent className="flex flex-col gap-1 pb-3">
                       {solutions.map((s) => (
@@ -116,7 +116,7 @@ export function Header() {
                   className="flex items-center gap-1 text-sm font-medium text-[#a3a3a3] hover:text-[#f5f5f5] transition-colors cursor-pointer outline-none"
                   style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                 >
-                  AI Solutions
+                  What We Do
                   <ChevronDown className="w-3.5 h-3.5 opacity-60" />
                 </button>
               </DropdownMenuTrigger>

@@ -4,10 +4,10 @@ import { useEffect, useRef } from "react"
 import { X, Check } from "lucide-react"
 
 const contrast = [
-  { not: "A consulting firm", are: "An execution team" },
-  { not: "Strategy decks", are: "Working software" },
-  { not: "Months of discovery", are: "14–21 day sprints" },
-  { not: "Generic AI advice", are: "Production-ready builds" },
+  { not: "A dev shop", are: "An engineering governance firm" },
+  { not: "A staffing company", are: "A strategic oversight layer" },
+  { not: "Traditional consultants", are: "Embedded governance partners" },
+  { not: "Implementation outsourcing", are: "Risk prevention & system resilience" },
 ]
 
 export function SolutionSection() {
@@ -36,22 +36,24 @@ export function SolutionSection() {
         {/* Label */}
         <div className="reveal flex items-center gap-3 mb-8">
           <span className="accent-line" />
-          <span className="section-label">{"// THE SOLUTION"}</span>
+          <span className="section-label">{"// WHAT DATASTUNT DOES"}</span>
         </div>
 
         {/* Headline */}
         <h2
-          className="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#f5f5f5] mb-6 max-w-2xl leading-tight"
+          className="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#f5f5f5] mb-6 max-w-3xl leading-tight"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
-          Your External AI Execution Team.
+          AI-Native Engineering Governance.
         </h2>
 
         {/* Body */}
-        <p className="reveal text-lg text-[#737373] max-w-2xl mb-16 leading-relaxed">
-          DataStunt Labs embeds alongside your team as your AI build partner.
-          We don&apos;t consult. We don&apos;t strategize endlessly. We architect, build,
-          and ship — and we do it in weeks, not months.
+        <p className="reveal text-lg text-[#737373] max-w-2xl mb-6 leading-relaxed">
+          Datastunt isn&apos;t a dev shop, a staffing firm, or a traditional consultancy. We operate in a category we&apos;re defining: AI-Native Engineering Governance — sitting above implementation to focus on whether the systems being built can survive long-term growth.
+        </p>
+
+        <p className="reveal text-base text-[#525252] max-w-2xl mb-16 leading-relaxed">
+          Every software company eventually becomes limited by one of two things — running out of customers, or running out of engineering quality. We exist to make sure it&apos;s never the latter.
         </p>
 
         {/* Contrast table */}
