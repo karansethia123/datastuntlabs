@@ -13,7 +13,7 @@ export function Hero() {
       />
 
       <div className="relative z-10 container mx-auto px-6 max-w-7xl py-32">
-        <div className="max-w-4xl">
+        <div className="max-w-5xl">
           {/* Label */}
           <div className="animate-fade-up animate-fade-up-1 mb-6 flex items-center gap-3">
             <span className="accent-line" />
@@ -34,7 +34,7 @@ export function Hero() {
 
           {/* Subheadline */}
           <p
-            className="animate-fade-up animate-fade-up-3 text-xl text-[#a3a3a3] leading-relaxed mb-4 max-w-2xl"
+            className="animate-fade-up animate-fade-up-3 text-lg text-[#a3a3a3] leading-relaxed mb-4 max-w-2xl"
             style={{ fontFamily: "var(--font-poppins), sans-serif" }}
           >
             Datastunt Labs is an AI-Native Engineering Governance firm. We help organizations build, operate, and scale software safely in the age of AI — where speed is no longer the hard part, but knowing whether your systems can survive growth is.
