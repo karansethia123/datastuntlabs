@@ -79,20 +79,12 @@ export default function AboutPage() {
   }, [])
 
   return (
-    <main className="bg-[#0a0a0a] text-[#f5f5f5]">
+    <main className="bg-background text-foreground">
       {/* Hero */}
       <section
         ref={heroRef}
-        className="relative overflow-hidden grid-bg noise-overlay"
+        className="relative overflow-hidden grid-bg noise-overlay section-glow"
       >
-        {/* Background glow */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(2,132,199,0.06) 0%, transparent 70%)",
-          }}
-        />
 
         <div className="relative z-10 container mx-auto px-6 max-w-7xl py-32 md:py-40">
           {/* Label */}
@@ -103,16 +95,16 @@ export default function AboutPage() {
 
           {/* Headline */}
           <h1
-            className="animate-fade-up animate-fade-up-2 text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-tight text-[#f5f5f5] mb-8 max-w-5xl"
+            className="animate-fade-up animate-fade-up-2 text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-tight text-foreground mb-8 max-w-5xl"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             We&apos;re an AI lab built for{" "}
-            <span className="text-[#0284c7]">outcomes,</span> not buzzwords.
+            <span className="text-accent">outcomes,</span> not buzzwords.
           </h1>
 
           {/* Body */}
           <p
-            className="animate-fade-up animate-fade-up-3 text-xl text-[#737373] leading-relaxed mb-12 max-w-2xl"
+            className="animate-fade-up animate-fade-up-3 text-xl text-muted-foreground leading-relaxed mb-12 max-w-2xl"
             style={{ fontFamily: "var(--font-poppins), sans-serif" }}
           >
             DataStunt Labs helps businesses move beyond AI hype into practical,
@@ -120,25 +112,25 @@ export default function AboutPage() {
           </p>
 
           {/* Capability chips */}
-          <div className="animate-fade-up animate-fade-up-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.08)] rounded-[4px] overflow-hidden">
+          <div className="animate-fade-up animate-fade-up-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border rounded-[4px] overflow-hidden">
             {capabilities.map(({ tag, title, desc }) => (
               <div
                 key={tag}
-                className="bg-[#0a0a0a] p-6 group hover:bg-[rgba(2,132,199,0.03)] transition-colors duration-200"
+                className="bg-background p-6 group hover:bg-accent/[0.03] transition-colors duration-200"
               >
                 <span
-                  className="block text-xs text-[#0284c7] mb-2"
+                  className="block text-xs text-accent mb-2"
                   style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                 >
                   {tag}
                 </span>
                 <h3
-                  className="text-base font-bold text-[#f5f5f5] mb-2"
+                  className="text-base font-bold text-foreground mb-2"
                   style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                 >
                   {title}
                 </h3>
-                <p className="text-sm text-[#737373] leading-relaxed">{desc}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -146,7 +138,7 @@ export default function AboutPage() {
       </section>
 
       {/* Story */}
-      <section ref={storyRef} className="py-24 px-6 bg-[#0d0d0d]">
+      <section ref={storyRef} className="py-24 px-6 bg-card">
         <div className="container mx-auto max-w-7xl">
           <div className="reveal flex items-center gap-3 mb-8">
             <span className="accent-line" />
@@ -162,17 +154,17 @@ export default function AboutPage() {
               >
                 Why we exist,
                 <br />
-                <span className="text-[#0284c7]">explained.</span>
+                <span className="text-accent">explained.</span>
               </h2>
-              <p className="reveal text-base text-[#737373] leading-relaxed mb-6">
+              <p className="reveal text-base text-muted-foreground leading-relaxed mb-6">
                 Founded in 2023 by{" "}
-                <span className="text-[#f5f5f5] font-medium">Nihit Saxena</span>,
+                <span className="text-foreground font-medium">Nihit Saxena</span>,
                 DataStunt Labs was built differently — with a focus on
                 lab-driven experimentation, business-first design, and
                 execution that takes solutions from prototype to production.
               </p>
-              <div className="reveal border-l-2 border-[#0284c7] pl-4">
-                <p className="text-sm text-[#525252] leading-relaxed italic">
+              <div className="reveal border-l-2 border-accent pl-4">
+                <p className="text-sm text-muted-foreground leading-relaxed italic">
                   &ldquo;Most businesses were overpaying for AI that never
                   reached production. We started DataStunt to change that.&rdquo;
                 </p>
@@ -181,18 +173,18 @@ export default function AboutPage() {
 
             {/* Right — timeline */}
             <div className="lg:col-span-7">
-              <div className="border border-[rgba(255,255,255,0.08)] rounded-[4px] overflow-hidden">
+              <div className="border border-border rounded-[4px] overflow-hidden">
                 {story.map((s, i) => (
                   <div
                     key={s.year}
                     className={`reveal grid grid-cols-12 gap-4 px-8 py-6 ${
                       i < story.length - 1
-                        ? "border-b border-[rgba(255,255,255,0.08)]"
+                        ? "border-b border-border"
                         : ""
-                    } group hover:bg-[rgba(2,132,199,0.02)] transition-colors duration-200`}
+                    } group hover:bg-accent/[0.02] transition-colors duration-200`}
                   >
                     <div
-                      className="col-span-3 text-xs text-[#0284c7] uppercase tracking-widest pt-1"
+                      className="col-span-3 text-xs text-accent uppercase tracking-widest pt-1"
                       style={{
                         fontFamily: "var(--font-montserrat), sans-serif",
                       }}
@@ -201,14 +193,14 @@ export default function AboutPage() {
                     </div>
                     <div className="col-span-9">
                       <h3
-                        className="text-base font-bold text-[#f5f5f5] mb-1"
+                        className="text-base font-bold text-foreground mb-1"
                         style={{
                           fontFamily: "var(--font-montserrat), sans-serif",
                         }}
                       >
                         {s.title}
                       </h3>
-                      <p className="text-sm text-[#737373] leading-relaxed">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         {s.desc}
                       </p>
                     </div>
@@ -221,7 +213,7 @@ export default function AboutPage() {
       </section>
 
       {/* Principles */}
-      <section ref={principlesRef} className="py-24 px-6 bg-[#0a0a0a]">
+      <section ref={principlesRef} className="py-24 px-6 bg-background bg-dot-pattern">
         <div className="container mx-auto max-w-7xl">
           <div className="reveal flex items-center gap-3 mb-8">
             <span className="accent-line" />
@@ -234,18 +226,18 @@ export default function AboutPage() {
           >
             Four principles. Zero exceptions.
           </h2>
-          <p className="reveal text-lg text-[#737373] mb-16 max-w-2xl">
+          <p className="reveal text-lg text-muted-foreground mb-16 max-w-2xl">
             Everything we ship is filtered through these.
           </p>
 
-          <div className="grid sm:grid-cols-2 gap-px bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.08)] rounded-[4px] overflow-hidden">
+          <div className="grid sm:grid-cols-2 gap-px bg-border border border-border rounded-[4px] overflow-hidden">
             {principles.map(({ num, title, desc }) => (
               <div
                 key={num}
-                className="reveal card-lift bg-[#0a0a0a] p-10 group relative"
+                className="reveal card-lift bg-background p-10 group relative"
               >
                 <span
-                  className="absolute top-6 right-8 text-7xl font-bold text-[#f5f5f5] select-none pointer-events-none transition-opacity duration-200 group-hover:opacity-5"
+                  className="absolute top-6 right-8 text-7xl font-bold text-foreground select-none pointer-events-none transition-opacity duration-200 group-hover:opacity-5"
                   style={{
                     fontFamily: "var(--font-montserrat), sans-serif",
                     opacity: 0.06,
@@ -255,7 +247,7 @@ export default function AboutPage() {
                 </span>
                 <div className="relative z-10">
                   <span
-                    className="block text-xs text-[#0284c7] mb-3"
+                    className="block text-xs text-accent mb-3"
                     style={{
                       fontFamily: "var(--font-montserrat), sans-serif",
                     }}
@@ -263,14 +255,14 @@ export default function AboutPage() {
                     {num}
                   </span>
                   <h3
-                    className="text-xl font-bold text-[#f5f5f5] mb-3"
+                    className="text-xl font-bold text-foreground mb-3"
                     style={{
                       fontFamily: "var(--font-montserrat), sans-serif",
                     }}
                   >
                     {title}
                   </h3>
-                  <p className="text-sm text-[#737373] leading-relaxed max-w-md">
+                  <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
                     {desc}
                   </p>
                 </div>
@@ -281,7 +273,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder */}
-      <section ref={founderRef} className="py-24 px-6 bg-[#0d0d0d]">
+      <section ref={founderRef} className="py-24 px-6 bg-card">
         <div className="container mx-auto max-w-7xl">
           <div className="reveal flex items-center gap-3 mb-8">
             <span className="accent-line" />
@@ -291,13 +283,13 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Animated SaaS illustration */}
             <div className="reveal lg:col-span-5">
-              <div className="relative border border-[rgba(255,255,255,0.08)] rounded-[4px] overflow-hidden bg-[#111111] p-6 flex items-center justify-center">
+              <div className="relative border border-border rounded-[4px] overflow-hidden bg-card p-6 flex items-center justify-center">
                 <div
-                  className="absolute -top-px -left-px w-12 h-12 border-t-2 border-l-2 border-[#0284c7] pointer-events-none"
+                  className="absolute -top-px -left-px w-12 h-12 border-t-2 border-l-2 border-accent pointer-events-none"
                   aria-hidden
                 />
                 <div
-                  className="absolute -bottom-px -right-px w-12 h-12 border-b-2 border-r-2 border-[#0284c7] pointer-events-none"
+                  className="absolute -bottom-px -right-px w-12 h-12 border-b-2 border-r-2 border-accent pointer-events-none"
                   aria-hidden
                 />
                 <svg
@@ -407,7 +399,7 @@ export default function AboutPage() {
             {/* Bio */}
             <div className="lg:col-span-7">
               <p
-                className="reveal text-xs text-[#0284c7] mb-3 uppercase tracking-widest"
+                className="reveal text-xs text-accent mb-3 uppercase tracking-widest"
                 style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
               >
                 Founder &amp; CEO
@@ -418,7 +410,7 @@ export default function AboutPage() {
               >
                 Nihit Saxena
               </h2>
-              <p className="reveal text-lg text-[#737373] leading-relaxed mb-8 max-w-xl">
+              <p className="reveal text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
                 Entrepreneur, AI practitioner, and problem-solver. Nihit leads
                 every engagement with a focus on real-world impact, not hype.
                 His background spans machine learning, generative AI, and
@@ -435,8 +427,8 @@ export default function AboutPage() {
                     key={item}
                     className="reveal flex items-start gap-3"
                   >
-                    <Check className="w-4 h-4 text-[#0284c7] mt-1 flex-shrink-0" />
-                    <span className="text-sm text-[#f5f5f5]">{item}</span>
+                    <Check className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
+                    <span className="text-sm text-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -448,15 +440,8 @@ export default function AboutPage() {
       {/* CTA */}
       <section
         ref={ctaRef}
-        className="py-32 px-6 bg-[#111111] relative overflow-hidden"
+        className="py-32 px-6 bg-card relative overflow-hidden section-glow"
       >
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse, rgba(2,132,199,0.06) 0%, transparent 70%)",
-          }}
-        />
 
         <div className="relative z-10 container mx-auto max-w-4xl text-center">
           <div className="reveal flex items-center justify-center gap-3 mb-8">
@@ -472,7 +457,7 @@ export default function AboutPage() {
             The partner you turn to when AI has to actually work.
           </h2>
 
-          <p className="reveal text-lg text-[#737373] mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="reveal text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             Whether you&apos;re automating documents, scaling customer knowledge,
             personalizing campaigns, or bringing order to visual data — we
             build the system, ship it, and stay to scale.

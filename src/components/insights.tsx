@@ -28,10 +28,10 @@ async function BlogCard({ blog, category }: CardProps) {
       href={blog.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group bg-[#111111] border border-[rgba(255,255,255,0.08)] rounded-[4px] overflow-hidden flex flex-col card-lift"
+      className="group card-glass overflow-hidden flex flex-col hover:border-primary/40 transition-colors duration-200"
     >
       {/* Thumbnail */}
-      <div className="relative h-44 overflow-hidden bg-[#1a1a1a]">
+      <div className="relative h-44 overflow-hidden bg-muted">
         {imageUrl ? (
           <Image
             src={imageUrl}
@@ -40,7 +40,7 @@ async function BlogCard({ blog, category }: CardProps) {
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
         ) : (
-          <div className="absolute inset-0 bg-[#1a1a1a]" />
+          <div className="absolute inset-0 bg-muted" />
         )}
         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
       </div>
@@ -48,26 +48,26 @@ async function BlogCard({ blog, category }: CardProps) {
       <div className="p-6 flex flex-col flex-1">
         {/* Category */}
         <span
-          className="text-xs text-[#0284c7] mb-3"
+          className="text-xs text-accent mb-3"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
           {category}
         </span>
 
         {/* Title */}
-        <h3 className="text-sm font-semibold text-[#f5f5f5] mb-3 leading-snug line-clamp-2 flex-1">
+        <h3 className="text-sm font-semibold text-foreground mb-3 leading-snug line-clamp-2 flex-1">
           {blog.title.rendered}
         </h3>
 
         {/* Excerpt */}
-        <p className="text-xs text-[#737373] leading-relaxed mb-4 line-clamp-2">
+        <p className="text-xs text-muted-foreground leading-relaxed mb-4 line-clamp-2">
           {blog.excerpt.rendered.replace(/<[^>]+>/g, "")}
         </p>
 
         {/* Meta + CTA */}
-        <div className="flex items-center justify-between border-t border-[rgba(255,255,255,0.08)] pt-4">
-          <span className="text-xs text-[#525252]">{dateStr}</span>
-          <div className="flex items-center gap-1 text-xs text-[#737373] group-hover:text-[#0284c7] transition-colors">
+        <div className="flex items-center justify-between border-t border-border pt-4">
+          <span className="text-xs text-muted-foreground">{dateStr}</span>
+          <div className="flex items-center gap-1 text-xs text-muted-foreground group-hover:text-primary transition-colors">
             <span style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
               Read Article
             </span>
@@ -85,7 +85,7 @@ type Props = {
 
 export function InsightsSection({ insights }: Props) {
   return (
-    <section id="insights" className="py-24 px-6 bg-[#0d0d0d]">
+    <section id="insights" className="py-24 px-6 bg-background">
       <div className="container mx-auto max-w-7xl">
         {/* Label */}
         <div className="flex items-center gap-3 mb-8">
@@ -95,7 +95,7 @@ export function InsightsSection({ insights }: Props) {
 
         <div className="flex items-end justify-between mb-4 flex-wrap gap-4">
           <h2
-            className="text-[clamp(1.75rem,4vw,3rem)] font-bold text-[#f5f5f5] leading-tight"
+            className="text-[clamp(1.75rem,4vw,3rem)] font-bold text-foreground leading-tight"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             Deep-Dive Analysis for Builders and Operators.
@@ -104,13 +104,13 @@ export function InsightsSection({ insights }: Props) {
             href="https://blog.datastunt.com/category/insights/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-[#737373] hover:text-[#0284c7] transition-colors"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             View All <ArrowRight className="w-4 h-4" />
           </a>
         </div>
-        <p className="text-base text-[#737373] mb-12">
+        <p className="text-base text-muted-foreground mb-12">
           Strategic perspectives on AI adoption, execution, and what&apos;s actually working for teams moving fast.
         </p>
 

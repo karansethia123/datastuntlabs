@@ -4,10 +4,10 @@ import { Shield, Heart, ShoppingBag, Zap } from "lucide-react"
 import { IndustrySection } from "@/components/industry-section"
 
 const industries = [
-  { name: "Insurance", icon: Shield, color: "text-sky-400" },
-  { name: "Healthcare", icon: Heart, color: "text-sky-400" },
-  { name: "Retail", icon: ShoppingBag, color: "text-sky-400" },
-  { name: "SaaS", icon: Zap, color: "text-sky-400" },
+  { name: "Insurance", icon: Shield, color: "text-foreground" },
+  { name: "Healthcare", icon: Heart, color: "text-foreground" },
+  { name: "Retail", icon: ShoppingBag, color: "text-foreground" },
+  { name: "SaaS", icon: Zap, color: "text-foreground" },
 ]
 
 const getIndustryDescription = (industryName: string) => {
@@ -123,9 +123,9 @@ const saasContent = {
 
 export default function Industries() {
   return (
-    <main className="bg-[#0a0a0a] min-h-screen">
+    <main className="bg-background min-h-screen">
       {/* ── Sub-page header — compact, not a landing hero ──────────────── */}
-      <section className="pt-20 pb-16 px-6 border-b border-[rgba(255,255,255,0.06)]">
+      <section className="pt-20 pb-16 px-6 border-b border-border">
         <div className="container mx-auto max-w-7xl">
           {/* Breadcrumb-style label */}
           <div className="flex items-center gap-3 mb-6">
@@ -134,13 +134,13 @@ export default function Industries() {
           </div>
 
           <h1
-            className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#f5f5f5] mb-4 leading-tight max-w-3xl"
+            className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-foreground mb-4 leading-tight max-w-3xl"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             AI Execution Across Verticals
           </h1>
           <p
-            className="text-lg text-[#737373] max-w-2xl leading-relaxed"
+            className="text-lg text-muted-foreground max-w-2xl leading-relaxed"
             style={{ fontFamily: "var(--font-poppins), sans-serif" }}
           >
             We build custom platforms and AI-powered tools to simplify your
@@ -151,7 +151,7 @@ export default function Industries() {
       </section>
 
       {/* ── Industry overview cards ────────────────────────────────────── */}
-      <section className="py-16 px-6">
+      <section className="py-24 px-6">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {industries.map((industry, index) => {
@@ -159,18 +159,18 @@ export default function Industries() {
               return (
                 <div
                   key={index}
-                  className="group p-6 bg-[#111111] border border-[rgba(255,255,255,0.06)] rounded-lg card-lift"
+                  className="group card-glass"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-[rgba(2,132,199,0.08)] border border-[rgba(2,132,199,0.15)] flex items-center justify-center mb-5 group-hover:border-sky-500/40 transition-colors duration-200">
+                  <div className="w-12 h-12 rounded-lg bg-accent/[0.08] border border-accent/[0.15] flex items-center justify-center mb-5 group-hover:border-accent/40 transition-colors duration-200">
                     <Icon className={`w-5 h-5 ${industry.color}`} />
                   </div>
                   <h3
-                    className="text-base font-bold text-[#f5f5f5] mb-2"
+                    className="text-base font-bold text-foreground mb-2"
                     style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                   >
                     {industry.name}
                   </h3>
-                  <p className="text-sm text-[#737373] leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {getIndustryDescription(industry.name)}
                   </p>
                 </div>

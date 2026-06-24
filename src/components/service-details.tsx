@@ -28,18 +28,17 @@ function useReveal(ref: React.RefObject<HTMLElement | null>) {
 // ─── Section wrapper ──────────────────────────────────────────────────────────
 function Section({
   children,
-  bg = "#0a0a0a",
+  className = "",
 }: {
   children: React.ReactNode
-  bg?: string
+  className?: string
 }) {
   const ref = useRef<HTMLElement>(null)
   useReveal(ref)
   return (
     <section
       ref={ref}
-      className="py-20 px-6"
-      style={{ background: bg }}
+      className={`py-20 px-6 bg-background ${className}`}
     >
       <div className="container mx-auto max-w-6xl">{children}</div>
     </section>
@@ -63,17 +62,9 @@ export function ServiceDetailsView({ service }: { service: ServiceDetails }) {
   const proofStat = statMatch ? statMatch[0].trim() : null
 
   return (
-    <div className="bg-[#0a0a0a]">
+    <div className="bg-background">
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="relative pt-32 pb-20 px-6 grid-bg noise-overlay overflow-hidden">
-        {/* Glow */}
-        <div
-          className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle at top right, rgba(2,132,199,0.08) 0%, transparent 60%)",
-          }}
-        />
+      <section className="relative pt-32 pb-20 px-6 grid-bg noise-overlay overflow-hidden section-glow">
 
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="grid lg:grid-cols-[1fr,auto] gap-12 items-end">
@@ -85,14 +76,14 @@ export function ServiceDetailsView({ service }: { service: ServiceDetails }) {
               </div>
 
               <h1
-                className="animate-fade-up animate-fade-up-2 text-[clamp(2.25rem,6vw,4rem)] font-bold text-[#f5f5f5] leading-tight mb-6"
+                className="animate-fade-up animate-fade-up-2 text-[clamp(2.25rem,6vw,4rem)] font-bold text-foreground leading-tight mb-6"
                 style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
               >
                 {service.title}
               </h1>
 
               <p
-                className="animate-fade-up animate-fade-up-3 text-lg text-[#737373] leading-relaxed max-w-2xl mb-8"
+                className="animate-fade-up animate-fade-up-3 text-lg text-muted-foreground leading-relaxed max-w-2xl mb-8"
                 style={{ fontFamily: "var(--font-poppins), sans-serif" }}
               >
                 {service.summary}
@@ -110,15 +101,15 @@ export function ServiceDetailsView({ service }: { service: ServiceDetails }) {
 
             {/* Right — CTA callout box */}
             <div className="animate-fade-up animate-fade-up-4 hidden lg:block w-full">
-              <div className="border border-[rgba(2,132,199,0.25)] rounded-lg bg-[rgba(2,132,199,0.04)] p-8 w-full">
+              <div className="border border-accent/25 rounded-lg bg-accent/5 p-8 w-full">
                 <p
-                  className="text-xs text-sky-400 mb-3"
+                  className="text-xs text-primary mb-3"
                   style={{ fontFamily: "var(--font-montserrat), sans-serif", letterSpacing: "0.1em" }}
                 >
                  {" // THE BOTTOM LINE"}
                 </p>
                 <p
-                  className="text-[#f5f5f5] text-base leading-relaxed font-medium"
+                  className="text-foreground text-base leading-relaxed font-medium"
                   style={{ fontFamily: "var(--font-poppins), sans-serif" }}
                 >
                   {service.cta}
@@ -130,30 +121,30 @@ export function ServiceDetailsView({ service }: { service: ServiceDetails }) {
       </section>
 
       {/* ── Where It Helps ───────────────────────────────────────────────── */}
-      <Section bg="#0d0d0d">
+      <Section>
         <SectionLabel text="// WHERE IT HELPS" />
         <h2
-          className="reveal text-[clamp(1.75rem,4vw,2.75rem)] font-bold text-[#f5f5f5] mb-4 leading-tight"
+          className="reveal text-[clamp(1.75rem,4vw,2.75rem)] font-bold text-foreground mb-4 leading-tight"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
           Where We Deploy This
         </h2>
-        <p className="reveal text-[#737373] mb-12 max-w-xl">
+        <p className="reveal text-muted-foreground mb-12 max-w-xl">
           Specific use cases where this system delivers measurable outcomes.
         </p>
 
-        <div className="grid sm:grid-cols-2 gap-px bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.06)] rounded-lg overflow-hidden">
+        <div className="grid sm:grid-cols-2 gap-px bg-border border border-border rounded-lg overflow-hidden">
           {service.whereItHelps.map((item, i) => (
             <div
               key={i}
-              className="reveal bg-[#0d0d0d] p-6 group hover:bg-[rgba(2,132,199,0.04)] transition-colors duration-200"
+              className="reveal bg-card p-6 group hover:bg-accent/5 transition-colors duration-200"
             >
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-md bg-[#1a1a1a] border border-[rgba(255,255,255,0.08)] flex items-center justify-center flex-shrink-0 group-hover:border-sky-600 transition-colors duration-200">
-                  <MapPin className="w-4 h-4 text-[#525252] group-hover:text-sky-400 transition-colors duration-200" />
+                <div className="w-8 h-8 rounded-md bg-muted border border-border flex items-center justify-center flex-shrink-0 group-hover:border-primary transition-colors duration-200">
+                  <MapPin className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors duration-200" />
                 </div>
                 <p
-                  className="text-sm text-[#d4d4d4] leading-relaxed pt-1"
+                  className="text-sm text-foreground leading-relaxed pt-1"
                   style={{ fontFamily: "var(--font-poppins), sans-serif" }}
                 >
                   {item}
@@ -165,27 +156,27 @@ export function ServiceDetailsView({ service }: { service: ServiceDetails }) {
       </Section>
 
       {/* ── Benefits ─────────────────────────────────────────────────────── */}
-      <Section bg="#0a0a0a">
+      <Section>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <div>
             <SectionLabel text="// BENEFITS" />
             <h2
-              className="reveal text-[clamp(1.75rem,4vw,2.75rem)] font-bold text-[#f5f5f5] mb-4 leading-tight"
+              className="reveal text-[clamp(1.75rem,4vw,2.75rem)] font-bold text-foreground mb-4 leading-tight"
               style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
             >
               What You Get
             </h2>
-            <p className="reveal text-[#737373] mb-10">
+            <p className="reveal text-muted-foreground mb-10">
               Clear, measurable advantages from week one.
             </p>
 
             <ul className="space-y-5">
               {service.benefits.map((benefit, i) => (
                 <li key={i} className="reveal flex items-start gap-4">
-                  <CheckCircle2 className="w-5 h-5 text-sky-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <span
-                    className="text-[#d4d4d4] text-sm leading-relaxed"
+                    className="text-foreground text-sm leading-relaxed"
                     style={{ fontFamily: "var(--font-poppins), sans-serif" }}
                   >
                     {benefit}
@@ -197,16 +188,16 @@ export function ServiceDetailsView({ service }: { service: ServiceDetails }) {
 
           {/* Right — decorative stat block */}
           <div className="reveal">
-            <div className="border border-[rgba(255,255,255,0.08)] rounded-lg bg-[#111111] p-10 text-center">
-              <TrendingUp className="w-10 h-10 text-sky-600 mx-auto mb-6" />
+            <div className="border border-border rounded-lg bg-card p-10 text-center">
+              <TrendingUp className="w-10 h-10 text-primary mx-auto mb-6" />
               <p
-                className="text-sm text-[#737373] mb-2 uppercase tracking-widest"
+                className="text-sm text-muted-foreground mb-2 uppercase tracking-widest"
                 style={{ fontFamily: "var(--font-montserrat), sans-serif", fontSize: "0.7rem" }}
               >
                 Execution-first approach
               </p>
               <p
-                className="text-[#f5f5f5] text-base leading-relaxed"
+                className="text-foreground text-base leading-relaxed"
                 style={{ fontFamily: "var(--font-poppins), sans-serif" }}
               >
                 Every benefit above is a direct result of shipping fast and iterating in production — not months of planning.
@@ -217,15 +208,15 @@ export function ServiceDetailsView({ service }: { service: ServiceDetails }) {
       </Section>
 
       {/* ── Industries ───────────────────────────────────────────────────── */}
-      <Section bg="#0d0d0d">
+      <Section>
         <SectionLabel text="// INDUSTRIES" />
         <h2
-          className="reveal text-[clamp(1.75rem,4vw,2.75rem)] font-bold text-[#f5f5f5] mb-4 leading-tight"
+          className="reveal text-[clamp(1.75rem,4vw,2.75rem)] font-bold text-foreground mb-4 leading-tight"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
           Where We&apos;ve Deployed This
         </h2>
-        <p className="reveal text-[#737373] mb-12">
+        <p className="reveal text-muted-foreground mb-12">
           Sectors where this system has been successfully built and shipped.
         </p>
 
@@ -233,11 +224,11 @@ export function ServiceDetailsView({ service }: { service: ServiceDetails }) {
           {service.industries.map((industry) => (
             <div
               key={industry}
-              className="flex items-center gap-2 px-5 py-3 border border-[rgba(255,255,255,0.08)] rounded-md bg-[#111111] hover:border-sky-600/40 hover:bg-[rgba(2,132,199,0.04)] transition-all duration-200 group"
+              className="flex items-center gap-2 px-5 py-3 border border-border rounded-md bg-card hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 group"
             >
-              <Building2 className="w-4 h-4 text-[#525252] group-hover:text-sky-500 transition-colors" />
+              <Building2 className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
               <span
-                className="text-sm text-[#d4d4d4] font-medium"
+                className="text-sm text-foreground font-medium"
                 style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
               >
                 {industry}
@@ -248,28 +239,28 @@ export function ServiceDetailsView({ service }: { service: ServiceDetails }) {
       </Section>
 
       {/* ── Proof ────────────────────────────────────────────────────────── */}
-      <Section bg="#0a0a0a">
+      <Section>
         <SectionLabel text="// PROOF" />
         <h2
-          className="reveal text-[clamp(1.75rem,4vw,2.75rem)] font-bold text-[#f5f5f5] mb-12 leading-tight"
+          className="reveal text-[clamp(1.75rem,4vw,2.75rem)] font-bold text-foreground mb-12 leading-tight"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
           Results in Production
         </h2>
 
-        <div className="reveal border border-[rgba(2,132,199,0.2)] rounded-lg bg-[rgba(2,132,199,0.03)] overflow-hidden">
-          <div className="grid lg:grid-cols-[auto,1fr] divide-y lg:divide-y-0 lg:divide-x divide-[rgba(2,132,199,0.15)]">
+        <div className="reveal border border-accent/20 rounded-lg bg-accent/5 overflow-hidden">
+          <div className="grid lg:grid-cols-[auto,1fr] divide-y lg:divide-y-0 lg:divide-x divide-accent/15">
             {/* Stat */}
             {proofStat && (
               <div className="p-10 flex flex-col items-center justify-center text-center lg:w-48">
                 <span
-                  className="text-5xl font-bold text-sky-400 leading-none mb-2"
+                  className="text-5xl font-bold text-primary leading-none mb-2"
                   style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                 >
                   {proofStat}
                 </span>
                 <span
-                  className="text-xs text-[#737373] uppercase tracking-widest"
+                  className="text-xs text-muted-foreground uppercase tracking-widest"
                   style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                 >
                   Proven outcome
@@ -281,13 +272,13 @@ export function ServiceDetailsView({ service }: { service: ServiceDetails }) {
             <div className="p-10 flex items-center">
               <div>
                 <span
-                  className="text-4xl text-sky-600 leading-none select-none"
+                  className="text-4xl text-primary leading-none select-none"
                   aria-hidden
                 >
                   &ldquo;
                 </span>
                 <p
-                  className="text-[#d4d4d4] text-base leading-relaxed mt-2"
+                  className="text-foreground text-base leading-relaxed mt-2"
                   style={{ fontFamily: "var(--font-poppins), sans-serif" }}
                 >
                   {service.proof}
@@ -298,15 +289,15 @@ export function ServiceDetailsView({ service }: { service: ServiceDetails }) {
         </div>
 
         {/* Bottom CTA */}
-        <div className="reveal mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-6 border-t border-[rgba(255,255,255,0.06)] pt-12">
+        <div className="reveal mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-6 border-t border-border pt-12">
           <div className="flex-1">
             <p
-              className="text-[#f5f5f5] font-semibold text-lg mb-1"
+              className="text-foreground font-semibold text-lg mb-1"
               style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
             >
               Ready to ship this for your team?
             </p>
-            <p className="text-[#737373] text-sm">
+            <p className="text-muted-foreground text-sm">
               Discovery calls are free, focused, and built around your roadmap.
             </p>
           </div>

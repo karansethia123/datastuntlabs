@@ -51,18 +51,18 @@ export const IndustrySection = ({
   return (
     <div
       ref={ref}
-      className="border border-[rgba(255,255,255,0.06)] rounded-lg overflow-hidden bg-[#0d0d0d]"
+      className="border border-border rounded-lg overflow-hidden bg-card"
     >
       {/* Header */}
-      <div className="p-8 lg:p-10 border-b border-[rgba(255,255,255,0.06)]">
+      <div className="p-8 lg:p-10 border-b border-border">
         <h2
-          className="reveal text-2xl lg:text-3xl font-bold text-[#f5f5f5] mb-3"
+          className="reveal text-2xl lg:text-3xl font-bold text-foreground mb-3"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
           {title}
         </h2>
         <p
-          className="reveal text-base text-[#737373] leading-relaxed max-w-2xl"
+          className="reveal text-base text-muted-foreground leading-relaxed max-w-2xl"
           style={{ fontFamily: "var(--font-poppins), sans-serif" }}
         >
           {description}
@@ -73,9 +73,9 @@ export const IndustrySection = ({
         {/* Where it helps */}
         <div>
           <div className="reveal flex items-center gap-2 mb-5">
-            <MapPin className="w-4 h-4 text-sky-500" />
+            <MapPin className="w-4 h-4 text-primary" />
             <h3
-              className="text-sm font-bold text-[#d4d4d4] uppercase tracking-wider"
+              className="text-sm font-bold text-foreground uppercase tracking-wider"
               style={{ fontFamily: "var(--font-montserrat), sans-serif", fontSize: "0.7rem" }}
             >
               Where It Helps
@@ -85,10 +85,10 @@ export const IndustrySection = ({
             {whereItHelps.map((item, i) => (
               <div
                 key={i}
-                className="reveal flex items-start gap-3 p-3 rounded-md hover:bg-[rgba(2,132,199,0.04)] transition-colors"
+                className="reveal flex items-start gap-3 p-3 rounded-md hover:bg-primary/5 transition-colors"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-sky-500 mt-2 flex-shrink-0" />
-                <span className="text-sm text-[#a3a3a3] leading-relaxed">{item}</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                <span className="text-sm text-muted-foreground leading-relaxed">{item}</span>
               </div>
             ))}
           </div>
@@ -97,9 +97,9 @@ export const IndustrySection = ({
         {/* Benefits */}
         <div>
           <div className="reveal flex items-center gap-2 mb-5">
-            <TrendingUp className="w-4 h-4 text-sky-500" />
+            <TrendingUp className="w-4 h-4 text-primary" />
             <h3
-              className="text-sm font-bold text-[#d4d4d4] uppercase tracking-wider"
+              className="text-sm font-bold text-foreground uppercase tracking-wider"
               style={{ fontFamily: "var(--font-montserrat), sans-serif", fontSize: "0.7rem" }}
             >
               Benefits
@@ -108,8 +108,8 @@ export const IndustrySection = ({
           <ul className="space-y-3">
             {benefits.map((item, i) => (
               <li key={i} className="reveal flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 text-sky-500 flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-[#d4d4d4] leading-relaxed">{item}</span>
+                <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-foreground leading-relaxed">{item}</span>
               </li>
             ))}
           </ul>
@@ -118,9 +118,9 @@ export const IndustrySection = ({
         {/* Solutions */}
         <div>
           <div className="reveal flex items-center gap-2 mb-5">
-            <Lightbulb className="w-4 h-4 text-sky-500" />
+            <Lightbulb className="w-4 h-4 text-primary" />
             <h3
-              className="text-sm font-bold text-[#d4d4d4] uppercase tracking-wider"
+              className="text-sm font-bold text-foreground uppercase tracking-wider"
               style={{ fontFamily: "var(--font-montserrat), sans-serif", fontSize: "0.7rem" }}
             >
               Relevant Solutions
@@ -129,25 +129,25 @@ export const IndustrySection = ({
           <ul className="space-y-3">
             {solutions.map((item, i) => (
               <li key={i} className="reveal flex items-start gap-3">
-                <ArrowRight className="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-[#a3a3a3] leading-relaxed">{item}</span>
+                <ArrowRight className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-muted-foreground leading-relaxed">{item}</span>
               </li>
             ))}
           </ul>
         </div>
 
         {/* Proof */}
-        <div className="reveal border border-[rgba(2,132,199,0.15)] rounded-md bg-[rgba(2,132,199,0.03)] p-6">
+        <div className="reveal border border-primary/15 rounded-md bg-primary/5 p-6">
           <div className="flex items-start gap-4">
             {proofStat && (
               <span
-                className="text-3xl font-bold text-sky-400 leading-none flex-shrink-0"
+                className="text-3xl font-bold text-primary leading-none flex-shrink-0"
                 style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
               >
                 {proofStat}
               </span>
             )}
-            <p className="text-sm text-[#a3a3a3] leading-relaxed italic">{proof}</p>
+            <p className="text-sm text-muted-foreground leading-relaxed italic">{proof}</p>
           </div>
         </div>
 

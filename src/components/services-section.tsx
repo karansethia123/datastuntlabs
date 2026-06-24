@@ -52,7 +52,7 @@ export function ServicesSection() {
   }, [])
 
   return (
-    <section id="services" ref={sectionRef} className="py-24 px-6 bg-[#0a0a0a]">
+    <section id="services" ref={sectionRef} className="py-24 px-6 bg-background">
       <div className="container mx-auto max-w-7xl">
         {/* Label */}
         <div className="reveal flex items-center gap-3 mb-8">
@@ -62,12 +62,12 @@ export function ServicesSection() {
 
         {/* Headline */}
         <h2
-          className="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#f5f5f5] mb-3 leading-tight"
+          className="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold text-foreground mb-3 leading-tight"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
           Assess. Govern. Transform.
         </h2>
-        <p className="reveal text-lg text-[#737373] mb-16 max-w-2xl">
+        <p className="reveal text-lg text-muted-foreground mb-16 max-w-2xl">
           Three ways to work with Datastunt — each building on the last, all powered by the DAIRS™ framework.
         </p>
 
@@ -76,16 +76,16 @@ export function ServicesSection() {
           {offerings.map(({ icon: Icon, name, role, description, href }) => (
             <div
               key={name}
-              className="reveal card-lift bg-[#111111] border border-[rgba(255,255,255,0.08)] rounded-[4px] p-8 group flex flex-col"
+              className="reveal card-glass group flex flex-col"
             >
               {/* Icon */}
-              <div className="w-12 h-12 rounded-[4px] bg-[#1a1a1a] border border-[rgba(255,255,255,0.08)] flex items-center justify-center mb-6 group-hover:border-[#0284c7] transition-colors duration-200">
-                <Icon className="w-6 h-6 text-[#737373] group-hover:text-[#0284c7] transition-colors duration-200" />
+              <div className="w-12 h-12 rounded-lg bg-muted border border-border flex items-center justify-center mb-6 group-hover:border-primary transition-colors duration-200">
+                <Icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors duration-200" />
               </div>
 
               {/* Role tag */}
               <span
-                className="text-xs text-[#0284c7] font-bold uppercase tracking-wider mb-3"
+                className="text-xs text-primary font-bold uppercase tracking-wider mb-3"
                 style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
               >
                 {role}
@@ -93,21 +93,21 @@ export function ServicesSection() {
 
               {/* Name */}
               <h3
-                className="text-lg font-bold text-[#f5f5f5] mb-3"
+                className="text-lg font-bold text-foreground mb-3"
                 style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
               >
                 {name}
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-[#737373] leading-relaxed flex-1 mb-6">
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-6">
                 {description}
               </p>
 
               {/* Link */}
               <Link
                 href={href}
-                className="inline-flex items-center gap-2 text-sm text-[#0284c7] hover:text-sky-400 transition-colors font-medium"
+                className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
                 style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
               >
                 Learn more

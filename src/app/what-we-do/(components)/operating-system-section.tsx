@@ -57,7 +57,7 @@ export function OperatingSystemSection() {
   }, [])
 
   return (
-    <section id="operating-system" ref={sectionRef} className="py-24 px-6 bg-[#0a0a0a]">
+    <section id="operating-system" ref={sectionRef} className="py-24 px-6 bg-background">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="reveal flex items-center gap-3 mb-4">
@@ -66,25 +66,25 @@ export function OperatingSystemSection() {
         </div>
 
         <h2
-          className="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#f5f5f5] mb-4 leading-tight"
+          className="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold text-foreground mb-4 leading-tight"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
           AI Development Operating System™
         </h2>
 
-        <p className="reveal text-lg text-[#737373] max-w-3xl mb-16 leading-relaxed">
+        <p className="reveal text-lg text-muted-foreground max-w-3xl mb-16 leading-relaxed">
           Not training. Not generic consulting. Not a tooling rollout. This is organizational transformation — a new operating model for how engineering work happens, producing sustainable velocity and genuine organizational intelligence.
         </p>
 
         {/* The Industry Problem */}
         <div className="mb-16">
           <h3
-            className="reveal text-xl font-bold text-[#f5f5f5] mb-4"
+            className="reveal text-xl font-bold text-foreground mb-4"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             The Industry Problem
           </h3>
-          <p className="reveal text-base text-[#737373] max-w-3xl leading-relaxed">
+          <p className="reveal text-base text-muted-foreground max-w-3xl leading-relaxed">
             Most companies hand engineers AI tools — Claude Code, Cursor, Copilot — and hope productivity follows. What actually happens: fragmented prompt libraries, inconsistent workflows, scattered knowledge, and a new failure mode we call &ldquo;AI Operational Debt.&rdquo; Giving people tool access is not the same as building an AI-native organization.
           </p>
         </div>
@@ -92,12 +92,12 @@ export function OperatingSystemSection() {
         {/* Core Mission */}
         <div className="mb-16">
           <h3
-            className="reveal text-xl font-bold text-[#f5f5f5] mb-4"
+            className="reveal text-xl font-bold text-foreground mb-4"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             Core Mission
           </h3>
-          <p className="reveal text-base text-[#737373] max-w-3xl leading-relaxed">
+          <p className="reveal text-base text-muted-foreground max-w-3xl leading-relaxed">
             Get human expertise and AI working together through structured, repeatable, governed systems. The goal isn&apos;t maximum automation — it&apos;s maximum leverage.
           </p>
         </div>
@@ -105,40 +105,40 @@ export function OperatingSystemSection() {
         {/* The Shift */}
         <div className="mb-16">
           <h3
-            className="reveal text-xl font-bold text-[#f5f5f5] mb-6"
+            className="reveal text-xl font-bold text-foreground mb-6"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             The Shift in How Software Gets Made
           </h3>
           <div className="reveal grid md:grid-cols-2 gap-6">
             {/* Before */}
-            <div className="bg-[#111111] border border-[rgba(255,255,255,0.08)] rounded-[4px] p-6">
-              <p className="text-xs font-bold text-[#525252] uppercase tracking-wider mb-4" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>Before</p>
-              <div className="flex items-center gap-3 text-sm text-[#737373]">
-                <span className="text-[#f5f5f5] font-medium">Human Engineers</span>
-                <span className="text-[#525252]">→</span>
+            <div className="bg-card border border-border rounded-[4px] p-6">
+              <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-4" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>Before</p>
+              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                <span className="text-foreground font-medium">Human Engineers</span>
+                <span className="text-muted-foreground">→</span>
                 <span>Code</span>
-                <span className="text-[#525252]">→</span>
+                <span className="text-muted-foreground">→</span>
                 <span>Software</span>
               </div>
             </div>
             {/* After */}
-            <div className="bg-[#111111] border border-[rgba(2,132,199,0.3)] rounded-[4px] p-6">
-              <p className="text-xs font-bold text-[#0284c7] uppercase tracking-wider mb-4" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>After</p>
-              <div className="flex items-center gap-3 text-sm text-[#737373] flex-wrap">
-                <span className="text-[#f5f5f5] font-medium">Human Engineers</span>
-                <span className="text-[#525252]">→</span>
-                <span className="text-sky-400 font-medium">Context</span>
-                <span className="text-[#525252]">→</span>
-                <span className="text-sky-400 font-medium">AI Systems</span>
-                <span className="text-[#525252]">→</span>
+            <div className="bg-card border border-primary/30 rounded-[4px] p-6">
+              <p className="text-xs font-bold text-primary uppercase tracking-wider mb-4" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>After</p>
+              <div className="flex items-center gap-3 text-sm text-muted-foreground flex-wrap">
+                <span className="text-foreground font-medium">Human Engineers</span>
+                <span className="text-muted-foreground">→</span>
+                <span className="text-primary font-medium">Context</span>
+                <span className="text-muted-foreground">→</span>
+                <span className="text-primary font-medium">AI Systems</span>
+                <span className="text-muted-foreground">→</span>
                 <span>Code</span>
-                <span className="text-[#525252]">→</span>
+                <span className="text-muted-foreground">→</span>
                 <span>Software</span>
               </div>
             </div>
           </div>
-          <p className="reveal text-sm text-[#525252] mt-4 max-w-3xl leading-relaxed">
+          <p className="reveal text-sm text-muted-foreground mt-4 max-w-3xl leading-relaxed">
             The organizations that win won&apos;t be the ones writing the most code — they&apos;ll be the ones creating the best context. Context is what fuels AI output quality.
           </p>
         </div>
@@ -146,21 +146,21 @@ export function OperatingSystemSection() {
         {/* Eight Transformation Areas */}
         <div className="mb-16">
           <h3
-            className="reveal text-xl font-bold text-[#f5f5f5] mb-8"
+            className="reveal text-xl font-bold text-foreground mb-8"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             Eight Transformation Areas
           </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {transformationAreas.map(({ name, description }) => (
-              <div key={name} className="reveal card-lift bg-[#111111] border border-[rgba(255,255,255,0.08)] rounded-[4px] p-5 group">
+              <div key={name} className="reveal card-lift bg-card border border-border rounded-[4px] p-5 group">
                 <h4
-                  className="text-sm font-bold text-[#f5f5f5] mb-2 group-hover:text-sky-400 transition-colors"
+                  className="text-sm font-bold text-foreground mb-2 group-hover:text-primary transition-colors"
                   style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                 >
                   {name}
                 </h4>
-                <p className="text-xs text-[#737373] leading-relaxed">{description}</p>
+                <p className="text-xs text-muted-foreground leading-relaxed">{description}</p>
               </div>
             ))}
           </div>
@@ -169,7 +169,7 @@ export function OperatingSystemSection() {
         {/* How the Engagement Runs */}
         <div className="mb-16">
           <h3
-            className="reveal text-xl font-bold text-[#f5f5f5] mb-6"
+            className="reveal text-xl font-bold text-foreground mb-6"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             How the Engagement Runs
@@ -177,20 +177,20 @@ export function OperatingSystemSection() {
           <div className="reveal grid md:grid-cols-4 gap-4">
             {phases.map(({ name, description }, i) => (
               <div key={name} className="relative">
-                <div className="bg-[#111111] border border-[rgba(255,255,255,0.08)] rounded-[4px] p-5 h-full">
+                <div className="bg-card border border-border rounded-[4px] p-5 h-full">
                   <span
-                    className="block text-xs text-[#0284c7] font-bold mb-2"
+                    className="block text-xs text-primary font-bold mb-2"
                     style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                   >
                     Phase {i + 1}
                   </span>
                   <h4
-                    className="text-sm font-bold text-[#f5f5f5] mb-2"
+                    className="text-sm font-bold text-foreground mb-2"
                     style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                   >
                     {name}
                   </h4>
-                  <p className="text-xs text-[#737373] leading-relaxed">{description}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{description}</p>
                 </div>
               </div>
             ))}
@@ -200,16 +200,16 @@ export function OperatingSystemSection() {
         {/* Deliverables */}
         <div className="mb-16">
           <h3
-            className="reveal text-xl font-bold text-[#f5f5f5] mb-6"
+            className="reveal text-xl font-bold text-foreground mb-6"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             What Clients Receive
           </h3>
           <div className="grid md:grid-cols-3 gap-4">
             {deliverables.map(({ group, items }) => (
-              <div key={group} className="reveal bg-[#111111] border border-[rgba(255,255,255,0.08)] rounded-[4px] p-6">
+              <div key={group} className="reveal bg-card border border-border rounded-[4px] p-6">
                 <p
-                  className="text-xs text-[#0284c7] font-bold uppercase tracking-wider mb-4"
+                  className="text-xs text-primary font-bold uppercase tracking-wider mb-4"
                   style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                 >
                   {group}
@@ -217,8 +217,8 @@ export function OperatingSystemSection() {
                 <ul className="space-y-2">
                   {items.map((item) => (
                     <li key={item} className="flex items-center gap-2">
-                      <span className="w-1 h-1 rounded-full bg-[#525252] flex-shrink-0" />
-                      <span className="text-sm text-[#a3a3a3]">{item}</span>
+                      <span className="w-1 h-1 rounded-full bg-muted-foreground flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -230,7 +230,7 @@ export function OperatingSystemSection() {
         {/* Team Structure */}
         <div className="mb-16">
           <h3
-            className="reveal text-xl font-bold text-[#f5f5f5] mb-4"
+            className="reveal text-xl font-bold text-foreground mb-4"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             Team Structure
@@ -238,17 +238,17 @@ export function OperatingSystemSection() {
           <ul className="space-y-2">
             {team.map((member) => (
               <li key={member} className="reveal flex items-center gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0284c7] flex-shrink-0" />
-                <span className="text-sm text-[#a3a3a3]">{member}</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                <span className="text-sm text-muted-foreground">{member}</span>
               </li>
             ))}
           </ul>
         </div>
 
         {/* Relationship to DAIRS */}
-        <div className="reveal border-l-2 border-[#0284c7] pl-6 py-2">
-          <p className="text-base text-[#a3a3a3] leading-relaxed">
-            <span className="text-[#f5f5f5] font-medium">The closed loop:</span> The Audit identifies weaknesses. The Copilot monitors them. The Operating System fixes them. All three are mapped against DAIRS dimensions, creating a continuous feedback cycle that compounds organizational resilience over time.
+        <div className="reveal border-l-2 border-primary pl-6 py-2">
+          <p className="text-base text-muted-foreground leading-relaxed">
+            <span className="text-foreground font-medium">The closed loop:</span> The Audit identifies weaknesses. The Copilot monitors them. The Operating System fixes them. All three are mapped against DAIRS dimensions, creating a continuous feedback cycle that compounds organizational resilience over time.
           </p>
         </div>
       </div>

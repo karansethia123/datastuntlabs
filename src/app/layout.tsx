@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} ${poppins.variable} antialiased dark`}
+        className={`${montserrat.variable} ${poppins.variable} antialiased`}
         style={{ fontFamily: "var(--font-poppins), sans-serif" }}
       >
         <Header />

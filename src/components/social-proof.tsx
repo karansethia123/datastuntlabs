@@ -47,7 +47,7 @@ export function SocialProof() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-24 px-6 bg-[#0d0d0d]">
+    <section ref={sectionRef} className="py-24 px-6 bg-background">
       <div className="container mx-auto max-w-7xl">
         {/* Label */}
         <div className="reveal flex items-center gap-3 mb-8">
@@ -57,7 +57,7 @@ export function SocialProof() {
 
         {/* Headline */}
         <h2
-          className="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#f5f5f5] mb-16 leading-tight"
+          className="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold text-foreground mb-16 leading-tight"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
           Startups Moving Fast Trust DataStunt Labs.
@@ -68,28 +68,28 @@ export function SocialProof() {
           {testimonials.map(({ quote, name, title, stage }) => (
             <div
               key={name}
-              className="reveal card-lift bg-[#111111] border border-[rgba(255,255,255,0.08)] rounded-[4px] p-8 flex flex-col"
+              className="reveal card-lift bg-card border border-border rounded-[4px] p-8 flex flex-col"
             >
               {/* Accent quote mark */}
               <span
-                className="text-5xl text-sky-400 leading-none mb-4 select-none"
+                className="text-5xl text-primary leading-none mb-4 select-none"
                 style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                 aria-hidden
               >
                 &ldquo;
               </span>
 
-              <blockquote className="text-[#f5f5f5] text-sm leading-relaxed flex-1 mb-6">
+              <blockquote className="text-foreground text-sm leading-relaxed flex-1 mb-6">
                 {quote}
               </blockquote>
 
-              <div className="flex items-center justify-between border-t border-[rgba(255,255,255,0.08)] pt-4">
+              <div className="flex items-center justify-between border-t border-border pt-4">
                 <div>
-                  <p className="text-sm font-medium text-[#f5f5f5]">{name}</p>
-                  <p className="text-xs text-[#737373]">{title}</p>
+                  <p className="text-sm font-medium text-foreground">{name}</p>
+                  <p className="text-xs text-muted-foreground">{title}</p>
                 </div>
                 <span
-                  className="text-xs px-2 py-1 border border-[rgba(2,132,199,0.3)] text-[#0284c7] rounded-[4px]"
+                  className="text-xs px-2 py-1 border border-primary/30 text-primary rounded-[4px]"
                   style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                 >
                   {stage}

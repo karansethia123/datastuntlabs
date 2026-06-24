@@ -9,7 +9,7 @@ const articles = await getBlogArticles()
 
 
   return (
-    <main className="bg-[#0a0a0a] min-h-screen">
+    <main className="bg-background min-h-screen">
       <ServiceDetailsView service={aiMarketingAssist} />
       <ArticlesSection articles={articles} />
     </main>

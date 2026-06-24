@@ -57,7 +57,7 @@ export function HeroCarousel({ stories }: Props) {
           <Button
             onClick={prevSlide}
             size="icon"
-            className="w-8 h-8 bg-gray-800/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-300 hover:bg-gray-700 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-700"
+            className="w-8 h-8 bg-background/90 backdrop-blur-sm rounded-full flex items-center justify-center text-muted-foreground hover:bg-muted hover:text-foreground transition-all duration-300 shadow-lg hover:shadow-xl border border-border"
           >
             <ChevronLeft className="w-5 h-5" />
           </Button>
@@ -68,7 +68,7 @@ export function HeroCarousel({ stories }: Props) {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? "bg-blue-400 w-8 shadow-md" : "bg-gray-600 hover:bg-gray-500 w-2"
+                  index === currentSlide ? "bg-primary w-8 shadow-md" : "bg-muted-foreground/40 hover:bg-muted-foreground/60 w-2"
                 }`}
               />
             ))}
@@ -77,7 +77,7 @@ export function HeroCarousel({ stories }: Props) {
           <Button
             onClick={nextSlide}
             size="icon"
-            className="w-8 h-8 bg-gray-800/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-300 hover:bg-gray-700 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-700"
+            className="w-8 h-8 bg-background/90 backdrop-blur-sm rounded-full flex items-center justify-center text-muted-foreground hover:bg-muted hover:text-foreground transition-all duration-300 shadow-lg hover:shadow-xl border border-border"
           >
             <ChevronRight className="w-5 h-5" />
           </Button>

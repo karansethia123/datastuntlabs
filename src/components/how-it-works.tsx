@@ -50,7 +50,7 @@ export function HowItWorks() {
   }, [])
 
   return (
-    <section id="how-it-works" ref={sectionRef} className="py-24 px-6 bg-[#0a0a0a]">
+    <section id="how-it-works" ref={sectionRef} className="py-24 px-6 bg-background bg-dot-pattern">
       <div className="container mx-auto max-w-7xl">
         {/* Label */}
         <div className="reveal flex items-center gap-3 mb-8">
@@ -60,7 +60,7 @@ export function HowItWorks() {
 
         {/* Headline */}
         <h2
-          className="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#f5f5f5] mb-16 leading-tight"
+          className="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold text-foreground mb-16 leading-tight"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
           Four Steps from Conversation to Shipped.
@@ -69,9 +69,9 @@ export function HowItWorks() {
         {/* Steps — desktop horizontal, mobile vertical */}
         <div className="relative">
           {/* Connecting line (desktop) */}
-          <div className="hidden lg:block absolute top-8 left-0 right-0 h-px bg-[rgba(255,255,255,0.08)]" />
+          <div className="hidden lg:block absolute top-8 left-0 right-0 h-px bg-border" />
           {/* Accent progress line */}
-          <div className="hidden lg:block absolute top-8 left-0 w-1/4 h-px bg-[#0284c7]" />
+          <div className="hidden lg:block absolute top-8 left-0 w-1/4 h-px bg-primary" />
 
           <div className="grid lg:grid-cols-4 gap-8">
             {steps.map(({ num, title, description }, i) => (
@@ -80,29 +80,28 @@ export function HowItWorks() {
                 <div
                   className={`hidden lg:flex w-4 h-4 rounded-full border-2 mb-8 ${
                     i === 0
-                      ? "border-[#0284c7] bg-[#0284c7]"
-                      : "border-[rgba(255,255,255,0.2)] bg-[#0a0a0a]"
+                      ? "border-primary bg-primary"
+                      : "border-border bg-background"
                   }`}
                 />
 
                 {/* Number — large faded */}
                 <span
-                  className="block text-[5rem] font-bold leading-none mb-4 select-none"
+                  className="block text-[5rem] font-bold leading-none mb-4 select-none text-foreground/[0.06]"
                   style={{
                     fontFamily: "var(--font-montserrat), sans-serif",
-                    color: "rgba(245,245,245,0.04)",
                   }}
                 >
                   {num}
                 </span>
 
                 <h3
-                  className="text-base font-bold text-[#f5f5f5] mb-3"
+                  className="text-base font-bold text-foreground mb-3"
                   style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                 >
                   {title}
                 </h3>
-                <p className="text-sm text-[#737373] leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {description}
                 </p>
               </div>

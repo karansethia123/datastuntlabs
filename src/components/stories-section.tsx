@@ -48,7 +48,7 @@ function StoryCard({ stat, statLabel, title, summary, link, imageUrl }: StoryCar
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="reveal card-lift group bg-[#111111] border border-[rgba(255,255,255,0.08)] rounded-[4px] overflow-hidden flex flex-col"
+      className="reveal card-glass group overflow-hidden flex flex-col hover:border-primary/40 transition-colors duration-200"
     >
       {/* Image */}
       {imageUrl && (
@@ -67,13 +67,13 @@ function StoryCard({ stat, statLabel, title, summary, link, imageUrl }: StoryCar
         {/* Stat — visual anchor */}
         <div className="mb-4">
           <span
-            className="text-5xl font-bold text-sky-400 leading-none"
+            className="text-5xl font-bold text-foreground leading-none"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             {stat}
           </span>
           <span
-            className="block text-xs text-[#737373] mt-1"
+            className="block text-xs text-muted-foreground mt-1"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             {statLabel}
@@ -82,24 +82,24 @@ function StoryCard({ stat, statLabel, title, summary, link, imageUrl }: StoryCar
 
         {/* Category tag */}
         <span
-          className="text-xs text-[#0284c7] mb-3"
+          className="text-xs text-accent mb-3"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
           STORIES
         </span>
 
         {/* Title */}
-        <h3 className="text-sm font-semibold text-[#f5f5f5] mb-3 leading-snug line-clamp-2 flex-1">
+        <h3 className="text-sm font-semibold text-foreground mb-3 leading-snug line-clamp-2 flex-1">
           {title}
         </h3>
 
         {/* Summary */}
-        <p className="text-xs text-[#737373] leading-relaxed mb-6 line-clamp-2">
+        <p className="text-xs text-muted-foreground leading-relaxed mb-6 line-clamp-2">
           {summary}
         </p>
 
         {/* CTA */}
-        <div className="flex items-center gap-2 text-xs text-[#737373] group-hover:text-[#0284c7] transition-colors duration-200">
+        <div className="flex items-center gap-2 text-xs text-muted-foreground group-hover:text-accent transition-colors duration-200">
           <span style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
             Read Full Article
           </span>
@@ -135,7 +135,7 @@ export function StoriesSection({ stories }: Props) {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-24 px-6 bg-[#0a0a0a]">
+    <section ref={sectionRef} className="py-24 px-6 bg-background">
       <div className="container mx-auto max-w-7xl">
         {/* Label */}
         <div className="reveal flex items-center gap-3 mb-8">
@@ -146,7 +146,7 @@ export function StoriesSection({ stories }: Props) {
         {/* Headline */}
         <div className="reveal flex items-end justify-between mb-4 flex-wrap gap-4">
           <h2
-            className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#f5f5f5] leading-tight"
+            className="text-[clamp(2rem,5vw,3.5rem)] font-bold text-foreground leading-tight"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             Results, Not Promises.
@@ -155,13 +155,13 @@ export function StoriesSection({ stories }: Props) {
             href="https://blog.datastunt.com/category/stories/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-[#737373] hover:text-[#0284c7] transition-colors"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             View All Case Studies <ArrowRight className="w-4 h-4" />
           </a>
         </div>
-        <p className="reveal text-lg text-[#737373] mb-16">
+        <p className="reveal text-lg text-muted-foreground mb-16">
           Here&apos;s what happens when execution actually works.
         </p>
 

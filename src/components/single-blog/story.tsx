@@ -57,16 +57,16 @@ const [imageUrl, setImageUrl] = useState<string | null>(null)
               }`}
           >
             <div className="space-y-6">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-800/60 backdrop-blur-sm text-blue-300 text-sm font-medium border border-gray-700/50">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-secondary/60 backdrop-blur-sm text-accent text-sm font-medium border border-border/50">
                 Stories
               </div>
               <h1 className="text-4xl lg:text-7xl font-bold text-white leading-tight drop-shadow-2xl">
                 {slide.title.rendered}
               </h1>
-              <p className="text-xl text-gray-200 font-content leading-relaxed drop-shadow-lg max-w-4xl mx-auto">
+              <p className="text-xl text-muted-foreground font-content leading-relaxed drop-shadow-lg max-w-4xl mx-auto">
                 {slide.excerpt.rendered.replace(/<[^>]+>/g, "")}
               </p>
-              <div className="flex items-center justify-center space-x-6 text-sm text-gray-300">
+              <div className="flex items-center justify-center space-x-6 text-sm text-muted-foreground">
                 <div className="flex items-center space-x-2">
                   <User className="w-4 h-4" />
                   <span>Nihit Saxena</span>
@@ -93,7 +93,7 @@ const [imageUrl, setImageUrl] = useState<string | null>(null)
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-gray-600 text-white hover:bg-gray-800/50 backdrop-blur-sm cursor-pointer bg-gray-800/30"
+                  className="border-border text-white hover:bg-secondary/50 backdrop-blur-sm cursor-pointer bg-secondary/30"
                 >
                   View All Stories
                 </Button>

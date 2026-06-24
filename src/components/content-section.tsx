@@ -26,7 +26,7 @@ export const ContentSection = ({
   return (
     <section className="py-4 px-4">
       <div className="container mx-auto max-w-7xl">
-        <Card className="p-8 bg-black/50 border border-border shadow-card min-h-64">
+        <Card className="p-8 bg-card border border-border min-h-64">
           <div className={`grid lg:grid-cols-2 gap-12 items-center ${reverse ? 'lg:grid-flow-col-dense' : ''}`}>
             {/* Content */}
             <div className={reverse ? 'lg:col-start-2' : ''}>
@@ -40,7 +40,7 @@ export const ContentSection = ({
                 {feature.pointers.map((feature, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <span className='rounded-full p-2'>
-                      <Bolt className="size-4 text-white shrink-0 mt-0.5" />
+                      <Bolt className="size-4 text-primary shrink-0 mt-0.5" />
                     </span>
                     <span className="text-muted-foreground">{feature.name}</span>
                     <span className="text-muted-foreground text-sm">{feature.text}</span>

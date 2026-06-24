@@ -41,8 +41,8 @@ export function TestimonialsSection() {
     <section id="testimonials" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 dark:text-gray-50">What Our Clients Say</h2>
-          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-foreground mb-4">What Our Clients Say</h2>
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
             Trusted by leading companies worldwide to deliver exceptional technology solutions
           </p>
         </div>
@@ -63,7 +63,7 @@ export function TestimonialsSection() {
                       <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <blockquote className="text-gray-700 dark:text-gray-100 tracking-wide leading-relaxed">"{testimonial.content}"</blockquote>
+                  <blockquote className="text-foreground tracking-wide leading-relaxed">"{testimonial.content}"</blockquote>
                   <div className="flex items-center space-x-4">
                     <Image
                       src={testimonial.avatar || "/placeholder.svg"}
@@ -71,9 +71,9 @@ export function TestimonialsSection() {
                       className="w-12 h-12 rounded-full object-cover"
                     />
                     <div>
-                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                      <div className="text-sm text-gray-600">{testimonial.role}</div>
-                      <div className="flex items-center space-x-1 text-sm text-gray-500">
+                      <div className="font-semibold text-foreground">{testimonial.name}</div>
+                      <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                      <div className="flex items-center space-x-1 text-sm text-muted-foreground">
                         <Building2 className="w-3 h-3" />
                         <span>{testimonial.company}</span>
                       </div>

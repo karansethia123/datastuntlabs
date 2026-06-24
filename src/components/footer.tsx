@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="border-t border-[rgba(255,255,255,0.08)] bg-[#0a0a0a] py-16">
+    <footer className="border-t border-[#E5E5E5] bg-[#F9F9F9] py-20">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid lg:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
@@ -11,11 +11,11 @@ export function Footer() {
             <Image
               width={160}
               height={40}
-              src="/headerlogowhite.png"
+              src="/headerlogo.png"
               alt="DataStunt Labs"
               className="h-8 w-auto"
             />
-            <p className="text-[#737373] text-sm leading-relaxed max-w-xs">
+            <p className="text-[#404040] text-sm leading-relaxed max-w-xs">
               AI-Native Engineering Governance. Helping organizations build, operate, and scale software safely in the age of AI.
             </p>
           </div>
@@ -38,7 +38,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[#737373] hover:text-[#f5f5f5] transition-colors"
+                    className="text-sm text-[#404040] hover:text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -61,7 +61,7 @@ export function Footer() {
                   href="https://www.linkedin.com/company/datastunt-labs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-[#737373] hover:text-[#f5f5f5] transition-colors"
+                  className="text-sm text-[#404040] hover:text-primary transition-colors"
                 >
                   LinkedIn
                 </a>
@@ -69,7 +69,7 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:hello@datastunt.com"
-                  className="text-sm text-[#737373] hover:text-sky-400 transition-colors"
+                  className="text-sm text-[#404040] hover:text-primary transition-colors"
                 >
                   nihit@datastunt.com
                 </a>
@@ -78,8 +78,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-[rgba(255,255,255,0.08)] pt-8">
-          <p className="text-[#737373] text-xs" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
+        <div className="border-t border-[#E5E5E5] pt-8">
+          <p className="text-[#404040] text-xs" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
             © 2026 DataStunt Labs. All rights reserved.
           </p>
         </div>

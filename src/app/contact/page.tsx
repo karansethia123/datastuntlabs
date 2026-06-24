@@ -11,28 +11,28 @@ export const metadata = {
 
 const ContactPage = () => {
   return (
-    <main>
-      <section className="mx-auto w-full max-w-6xl px-4 py-12 md:py-16">
+    <main className="bg-background">
+      <section className="mx-auto w-full max-w-6xl px-6 py-12 md:py-16">
         <div className="grid gap-10 md:grid-cols-2 md:gap-12">
           {/* Left: Heading + Form */}
           <div>
-            <p className="text-sm font-medium text-sky-400">Get in Touch</p>
+            <p className="text-sm font-medium text-muted-foreground">Get in Touch</p>
             <h1 className="mt-2 text-pretty text-3xl font-semibold leading-tight md:text-4xl">
               Let&apos;s Chat, Reach Out to Us
             </h1>
-            <p className="mt-3 max-w-prose text-sm text-zinc-300 md:text-base">
+            <p className="mt-3 max-w-prose text-sm text-muted-foreground md:text-base">
               Have questions or feedback? We&apos;re here to help. Send us a message and we&apos;ll respond within 24
               hours.
             </p>
 
-            <Separator className="my-6 bg-zinc-800" />
+            <Separator className="my-6 bg-border" />
 
             <ContactForm />
           </div>
 
           {/* Right: Image + Contact info cards */}
           <div className="flex flex-col gap-6">
-            <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+            <div className="overflow-hidden rounded-2xl border border-border bg-card">
               <Image
                 src="https://i6geujgmiz.ufs.sh/f/8OZHJ5DczC5XUNoWOd48KPkp3GLXm1g6FcxilYZ0Bn2eo8Va"
                 alt="Person using a phone, contact illustration"
@@ -44,9 +44,9 @@ const ContactPage = () => {
             </div>
 
             <div className="grid gap-4">
-              <Card className="border-zinc-800 bg-zinc-900 text-white gap-3 py-3">
+              <Card className="border-border bg-card text-foreground gap-3 py-3">
                 <CardHeader className="flex flex-row items-center gap-3 space-y-0">
-                  <div className="rounded-lg bg-sky-500/10 p-2 text-sky-400" aria-hidden="true">
+                  <div className="rounded-lg bg-foreground/5 p-2 text-foreground" aria-hidden="true">
                     <Mail className="h-5 w-5" />
                   </div>
                   <CardTitle className="text-base">Email</CardTitle>
@@ -54,7 +54,7 @@ const ContactPage = () => {
                 <CardContent>
                   <a
                     href="mailto:support@example.com"
-                    className="text-pretty text-sm text-sky-400 underline-offset-4 hover:underline"
+                    className="text-pretty text-sm text-foreground underline-offset-4 hover:underline"
                   >
                     nihit@datastunt.com
                   </a>

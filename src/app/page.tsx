@@ -4,13 +4,13 @@ import { SolutionSection } from "@/components/solution-section"
 import { ServicesSection } from "@/components/services-section"
 import { DAIRSTeaser } from "@/components/dairs-teaser"
 import { FinalCTA } from "@/components/final-cta"
-import { ICPSection } from "@/components/icp-section"
+// import { ICPSection } from "@/components/icp-section"
 
 import { getBlogArticles, getBlogInsights, getBlogStories } from "@/data/api"
 import { StoriesSection } from "@/components/stories-section"
 import { InsightsSection } from "@/components/insights"
 import { ArticlesSection } from "@/components/articles"
-import { HowItWorks } from "@/components/how-it-works"
+// import { HowItWorks } from "@/components/how-it-works"
 
 export default async function Home() {
 
@@ -19,14 +19,12 @@ export default async function Home() {
   const articles = await getBlogArticles()
 
   return (
-    <main className="bg-[#0a0a0a]">
+    <main className="bg-background">
       <Hero />
       <ProblemSection />
       <SolutionSection />
-      <ICPSection />
       <ServicesSection />
       <DAIRSTeaser />
-      <HowItWorks />
       <StoriesSection stories={stories} />
       <InsightsSection insights={insights} />
       <ArticlesSection articles={articles} />

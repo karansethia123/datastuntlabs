@@ -28,7 +28,7 @@ const Article = async({ article, index }: Props) => {
   return (
     <div
       key={article.id}
-      className="group relative bg-gray-900/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+      className="group relative bg-card/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-border hover:border-border/70 transition-all duration-500 hover:scale-105 hover:shadow-2xl"
     >
       {/* Gradient Overlay */}
       <div
@@ -76,14 +76,14 @@ const Article = async({ article, index }: Props) => {
 
         {/* Content */}
         <div className="flex flex-col space-y-3">
-          <h3 className="text-lg font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300 line-clamp-2">
+          <h3 className="text-lg font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-foreground transition-all duration-300 line-clamp-2">
             {article.title.rendered}
           </h3>
 
-          <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">{article.excerpt.rendered.replace(/<[^>]+>/g, "")}</p>
+          <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">{article.excerpt.rendered.replace(/<[^>]+>/g, "")}</p>
 
           {/* Meta Info */}
-          <div className="flex items-center justify-between text-xs text-gray-400 pt-2 border-t border-gray-800">
+          <div className="flex items-center justify-between text-xs text-muted-foreground pt-2 border-t border-border">
             <div className="flex items-center space-x-2">
               <span>Nihit Saxena</span>
               <span>•</span>

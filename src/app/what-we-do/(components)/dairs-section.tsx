@@ -57,7 +57,7 @@ export function DAIRSSection() {
   }, [])
 
   return (
-    <section id="dairs" ref={sectionRef} className="py-24 px-6 bg-[#0d0d0d]">
+    <section id="dairs" ref={sectionRef} className="py-24 px-6 bg-card">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="reveal flex items-center gap-3 mb-4">
@@ -66,25 +66,25 @@ export function DAIRSSection() {
         </div>
 
         <h2
-          className="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold text-[#f5f5f5] mb-4 leading-tight"
+          className="reveal text-[clamp(2rem,5vw,3.5rem)] font-bold text-foreground mb-4 leading-tight"
           style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
         >
           DAIRS™: The Datastunt AI Readiness &amp; Resilience System
         </h2>
 
-        <p className="reveal text-lg text-[#737373] max-w-3xl mb-16 leading-relaxed">
+        <p className="reveal text-lg text-muted-foreground max-w-3xl mb-16 leading-relaxed">
           A comprehensive framework that measures the health, resilience, scalability, governance maturity, and long-term sustainability of modern software organizations. Created because software creation has been automated while software governance has not — so risk accumulates invisibly until growth, incidents, due diligence, or key-person departures expose it.
         </p>
 
         {/* What it is NOT */}
         <div className="mb-16">
           <h3
-            className="reveal text-xl font-bold text-[#f5f5f5] mb-4"
+            className="reveal text-xl font-bold text-foreground mb-4"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             What DAIRS Is Not
           </h3>
-          <p className="reveal text-base text-[#737373] max-w-3xl leading-relaxed">
+          <p className="reveal text-base text-muted-foreground max-w-3xl leading-relaxed">
             DAIRS is not a code review, not a security scan, not a cloud audit, not a compliance framework, and not an &ldquo;AI assessment tool.&rdquo; It evaluates organizations as complete systems — how technology, people, process, infrastructure, and AI interact — rather than scoring isolated weak points.
           </p>
         </div>
@@ -92,12 +92,12 @@ export function DAIRSSection() {
         {/* Philosophy */}
         <div className="mb-16">
           <h3
-            className="reveal text-xl font-bold text-[#f5f5f5] mb-4"
+            className="reveal text-xl font-bold text-foreground mb-4"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             Philosophy
           </h3>
-          <p className="reveal text-base text-[#737373] max-w-3xl leading-relaxed">
+          <p className="reveal text-base text-muted-foreground max-w-3xl leading-relaxed">
             Sustainable growth requires balancing competing tensions: speed vs. stability, innovation vs. governance, autonomy vs. accountability, AI automation vs. human oversight, growth vs. resilience. The goal of DAIRS isn&apos;t a perfect system — it&apos;s a system that can adapt and survive.
           </p>
         </div>
@@ -105,22 +105,22 @@ export function DAIRSSection() {
         {/* Ten Dimensions */}
         <div className="mb-16">
           <h3
-            className="reveal text-xl font-bold text-[#f5f5f5] mb-8"
+            className="reveal text-xl font-bold text-foreground mb-8"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             Ten Dimensions
           </h3>
-          <div className="reveal border border-[rgba(255,255,255,0.08)] rounded-[4px] overflow-hidden">
+          <div className="reveal border border-border rounded-[4px] overflow-hidden">
             {/* Header */}
-            <div className="grid grid-cols-[1fr_80px] md:grid-cols-[200px_1fr_80px] border-b border-[rgba(255,255,255,0.08)] bg-[#111111]">
+            <div className="grid grid-cols-[1fr_80px] md:grid-cols-[200px_1fr_80px] border-b border-border bg-muted">
               <div className="px-6 py-3">
-                <span className="text-xs font-bold text-[#525252] uppercase tracking-wider" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>Dimension</span>
+                <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>Dimension</span>
               </div>
               <div className="hidden md:block px-6 py-3">
-                <span className="text-xs font-bold text-[#525252] uppercase tracking-wider" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>What It Measures</span>
+                <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>What It Measures</span>
               </div>
               <div className="px-6 py-3 text-right">
-                <span className="text-xs font-bold text-[#525252] uppercase tracking-wider" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>Weight</span>
+                <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>Weight</span>
               </div>
             </div>
             {/* Rows */}
@@ -128,17 +128,17 @@ export function DAIRSSection() {
               <div
                 key={name}
                 className={`grid grid-cols-[1fr_80px] md:grid-cols-[200px_1fr_80px] ${
-                  i < dimensions.length - 1 ? "border-b border-[rgba(255,255,255,0.08)]" : ""
-                } hover:bg-[rgba(2,132,199,0.02)] transition-colors`}
+                  i < dimensions.length - 1 ? "border-b border-border" : ""
+                } hover:bg-primary/5 transition-colors`}
               >
                 <div className="px-6 py-4">
-                  <span className="text-sm font-medium text-[#f5f5f5]" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>{name}</span>
+                  <span className="text-sm font-medium text-foreground" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>{name}</span>
                 </div>
                 <div className="hidden md:block px-6 py-4">
-                  <span className="text-sm text-[#737373]">{description}</span>
+                  <span className="text-sm text-muted-foreground">{description}</span>
                 </div>
                 <div className="px-6 py-4 text-right">
-                  <span className="text-sm font-bold text-[#0284c7]" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>{weight}</span>
+                  <span className="text-sm font-bold text-primary" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>{weight}</span>
                 </div>
               </div>
             ))}
@@ -148,27 +148,27 @@ export function DAIRSSection() {
         {/* Five Maturity Levels */}
         <div className="mb-16">
           <h3
-            className="reveal text-xl font-bold text-[#f5f5f5] mb-8"
+            className="reveal text-xl font-bold text-foreground mb-8"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             Five Maturity Levels
           </h3>
           <div className="reveal grid grid-cols-2 md:grid-cols-5 gap-3">
             {maturityLevels.map(({ level, name, description }) => (
-              <div key={level} className="bg-[#111111] border border-[rgba(255,255,255,0.08)] rounded-[4px] p-4 text-center">
+              <div key={level} className="bg-background border border-border rounded-[4px] p-4 text-center">
                 <span
-                  className="block text-2xl font-bold text-[#0284c7] mb-1"
+                  className="block text-2xl font-bold text-primary mb-1"
                   style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                 >
                   {level}
                 </span>
                 <span
-                  className="block text-sm font-bold text-[#f5f5f5] mb-2"
+                  className="block text-sm font-bold text-foreground mb-2"
                   style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
                 >
                   {name}
                 </span>
-                <p className="text-xs text-[#737373] leading-relaxed">{description}</p>
+                <p className="text-xs text-muted-foreground leading-relaxed">{description}</p>
               </div>
             ))}
           </div>
@@ -177,19 +177,19 @@ export function DAIRSSection() {
         {/* Outputs */}
         <div className="mb-16">
           <h3
-            className="reveal text-xl font-bold text-[#f5f5f5] mb-4"
+            className="reveal text-xl font-bold text-foreground mb-4"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             Outputs
           </h3>
-          <p className="reveal text-base text-[#737373] max-w-3xl leading-relaxed mb-6">
+          <p className="reveal text-base text-muted-foreground max-w-3xl leading-relaxed mb-6">
             DAIRS produces more than a single score. Each assessment generates a multi-dimensional view of organizational health:
           </p>
           <div className="reveal flex flex-wrap gap-3">
             {outputs.map((output) => (
               <span
                 key={output}
-                className="px-4 py-2 border border-[rgba(255,255,255,0.12)] rounded-[4px] text-sm text-[#f5f5f5] bg-[#111111]"
+                className="px-4 py-2 border border-border rounded-[4px] text-sm text-foreground bg-background"
                 style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
               >
                 {output}
@@ -201,28 +201,28 @@ export function DAIRSSection() {
         {/* Evidence-driven */}
         <div className="mb-16">
           <h3
-            className="reveal text-xl font-bold text-[#f5f5f5] mb-4"
+            className="reveal text-xl font-bold text-foreground mb-4"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             Evidence-Driven
           </h3>
-          <p className="reveal text-base text-[#737373] max-w-3xl leading-relaxed">
+          <p className="reveal text-base text-muted-foreground max-w-3xl leading-relaxed">
             DAIRS scores are never based on interviews alone. Evidence includes repositories, documentation, infrastructure configurations, monitoring and incident data, architecture diagrams, and prompt/agent configurations — alongside structured leadership and engineering interviews. This ensures assessments reflect reality, not self-reported perceptions.
           </p>
         </div>
 
         {/* Long-term vision */}
-        <div className="reveal border border-[rgba(2,132,199,0.2)] rounded-[4px] p-8 bg-[rgba(2,132,199,0.02)] mb-12">
+        <div className="reveal border border-primary/20 rounded-[4px] p-8 bg-primary/5 mb-12">
           <h3
-            className="text-lg font-bold text-[#f5f5f5] mb-3"
+            className="text-lg font-bold text-foreground mb-3"
             style={{ fontFamily: "var(--font-montserrat), sans-serif" }}
           >
             Long-Term Vision
           </h3>
-          <p className="text-base text-[#a3a3a3] leading-relaxed mb-4">
+          <p className="text-base text-muted-foreground leading-relaxed mb-4">
             DAIRS is intended to become the common language of engineering readiness — the way audited financial statements serve as the common language of financial health. A benchmark used by founders, CTOs, boards, and investors alike to evaluate technology risk, make investment decisions, and hold engineering organizations accountable for sustainable quality.
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-2 text-sm text-[#0284c7] hover:text-sky-400 transition-colors font-bold" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
+          <Link href="/contact" className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-bold" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
             Get Your DAIRS Score
             <ArrowRight className="w-4 h-4" />
           </Link>

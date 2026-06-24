@@ -81,10 +81,10 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 text-center" role="status" aria-live="polite">
+      <div className="rounded-2xl border border-border bg-card p-6 text-center" role="status" aria-live="polite">
         <CheckCircle2 className="mx-auto h-10 w-10 text-emerald-400" aria-hidden="true" />
         <h2 className="mt-3 text-lg font-semibold">Form submitted</h2>
-        <p className="mt-1 text-sm text-zinc-400">We&apos;ll connect with you soon.</p>
+        <p className="mt-1 text-sm text-muted-foreground">We&apos;ll connect with you soon.</p>
       </div>
     )
   }
@@ -107,7 +107,6 @@ export default function ContactForm() {
                   <Input
                     placeholder="Jane Doe"
                     {...field}
-                    className="bg-zinc-900 text-white placeholder:text-zinc-500"
                   />
                 </FormControl>
                 <FormMessage />
@@ -125,7 +124,6 @@ export default function ContactForm() {
                   <Input
                     placeholder="Acme Inc."
                     {...field}
-                    className="bg-zinc-900 text-white placeholder:text-zinc-500"
                   />
                 </FormControl>
                 <FormMessage />
@@ -147,7 +145,6 @@ export default function ContactForm() {
                   autoComplete="email"
                   placeholder="you@example.com"
                   {...field}
-                  className="bg-zinc-900 text-white placeholder:text-zinc-500"
                 />
               </FormControl>
               <FormMessage />
@@ -166,7 +163,6 @@ export default function ContactForm() {
                   rows={6}
                   placeholder="How can we help?"
                   {...field}
-                  className="bg-zinc-900 text-white placeholder:text-zinc-500"
                 />
               </FormControl>
               <FormMessage />
@@ -175,14 +171,14 @@ export default function ContactForm() {
         />
 
         {error && (
-          <p className="text-sm text-red-400" role="alert">
+          <p className="text-sm text-destructive" role="alert">
             {error}
           </p>
         )}
 
         <div className="flex items-center justify-between gap-4">
-          <p className="text-xs text-zinc-400">We respect your privacy. We&rsquo;ll never share your info.</p>
-          <Button type="submit" disabled={submitting} className="bg-sky-600 text-white hover:bg-sky-500">
+          <p className="text-xs text-muted-foreground">We respect your privacy. We&rsquo;ll never share your info.</p>
+          <Button type="submit" disabled={submitting} className="btn-accent">
             {submitting ? "Sending..." : "Send message"}
           </Button>
         </div>
